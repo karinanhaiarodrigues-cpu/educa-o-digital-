@@ -1,26 +1,87 @@
 
 <!DOCTYPE html>
-<html lang="pr-br">
- <head>
+<html lang="pt-BR">
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="whidth, initial-scale1,0>"
-    <title>Blog </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+
     <style>
-        header{
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        header {
             background-color: blueviolet;
-            color: rgb(140, 106, 173);
+            color: white;
             text-align: center;
             max-width: 800px;
-            margin: auto;
+            margin: 20px auto 0;
             padding: 16px;
+            border-radius: 8px 8px 0 0;
         }
-        main{ 
+
+        main {
             background-color: rgb(59, 59, 180);
-            color: rgb(109, 109, 177);
+            color: white;
             max-width: 800px;
             margin: 0 auto;
             padding: 16px;
             display: flex;
+            gap: 20px;
+        }
+
+        article {
+            flex: 3;
+        }
+
+        aside {
+            flex: 1;
+            background-color: rgba(255, 255, 255, 0.15);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        footer {
+            max-width: 800px;
+            margin: 0 auto 20px;
+            background-color: blueviolet;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            border-radius: 0 0 8px 8px;
         }
     </style>
- </head>
+</head>
+
+<body>
+
+    <header>
+        <h1>Meu Blog</h1>
+        <p>Bem-vindo ao meu blog!</p>
+    </header>
+
+    <main>
+        <article>
+            <h2>Primeira Postagem</h2>
+            <p>
+                Este é um exemplo de postagem de um blog criado em HTML e CSS.
+                Você pode adicionar quantos textos desejar aqui.
+            </p>
+        </article>
+
+        <aside>
+            <h3>Sobre</h3>
+            <p>Este espaço pode conter informações do autor, categorias ou links.</p>
+        </aside>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Meu Blog. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
+
