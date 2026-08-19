@@ -1,85 +1,70 @@
-/* Reset básico para padronização */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Flexbox para centralizar tudo na tela */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f8f9fa;
+  background-color: #f4f4f9;
   color: #333;
-  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
 }
 
-/* Cabeçalho */
-.header {
-  background-color: #111;
-  color: #fff;
+/* Container principal centralizado */
+.page-container {
+  max-width: 500px;
+  width: 100%;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   text-align: center;
-  padding: 2rem 1rem;
 }
 
 .header h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
+  letter-spacing: 1px;
   text-transform: uppercase;
-  letter-spacing: 2px;
 }
 
-/* Conteúdo Principal */
-.content {
-  display: flex;
-  justify-content: center;
-  padding: 2rem 1rem;
-}
-
-.card {
-  background: #fff;
-  max-width: 600px;
-  width: 100%;
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  text-align: center;
+.header p {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1.5rem;
 }
 
 .card h2 {
-  margin-bottom: 0.5rem;
-  color: #222;
+  font-size: 1.3rem;
+  margin-bottom: 0.3rem;
 }
 
 .card p {
-  margin-bottom: 1.5rem;
-  color: #666;
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 1rem;
 }
 
-/* Link e Imagem */
+/* Estilação da imagem/link no centro */
 .hidden-link {
   display: inline-block;
-  text-decoration: none;
-  cursor: pointer;
-  outline: none;
+  width: 100%;
 }
 
 .fashion-img {
   width: 100%;
   height: auto;
-  border-radius: 6px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  border-radius: 8px;
+  display: block;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-/* Efeito visual ao passar o mouse */
 .fashion-img:hover {
   transform: scale(1.02);
-  opacity: 0.95;
-}
-
-/* Rodapé */
-.footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: #eee;
-  font-size: 0.9rem;
-  color: #777;
-  margin-top: 2rem;
+  filter: brightness(0.95);
 }
