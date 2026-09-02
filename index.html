@@ -1,29 +1,165 @@
-<!DOCTYPE html>
+<!<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mundo da Moda</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moda da Karin</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #faf7f5;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        header {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #2c2c2c;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-bottom: 2px solid #d4a373;
+            padding-bottom: 10px;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Página Inicial */
+        #home-page p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        .main-img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 12px;
+            cursor: pointer;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .main-img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+        }
+
+        .click-hint {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #d4a373;
+            font-weight: bold;
+        }
+
+        /* Segunda Página (Escondida por padrão) */
+        #detail-page {
+            display: none;
+        }
+
+        #detail-page p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            color: #444;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .back-btn {
+            margin-top: 30px;
+            padding: 10px 20px;
+            background-color: #d4a373;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        .back-btn:hover {
+            background-color: #bc8a5f;
+        }
+    </style>
 </head>
 <body>
 
-  <main class="page-container">
-    <header class="header">
-      <h1>Tendências & Estilo</h1>
-      <p>O seu portal sobre o universo da moda</p>
+    <header>
+        <h1>Moda da Karin</h1>
     </header>
 
-    <section class="card">
-      <h2>Estilo Urbano 2026</h2>
-      <p>Clique na imagem para acessar o conteúdo</p>
-      
-      <!-- Link "escondido" sob a imagem -->
-      <a href="outra-pagina.html" class="hidden-link" title="Ir para a próxima página">
-        <img src="https://via.placeholder.com/600x400" alt="Coleção de Moda" class="fashion-img">
-      </a>
-    </section>
-  </main>
+    <div class="container">
+        <section id="home-page">
+            <p>Bem-vindo ao universo da moda! Descubra tendências, estilos e inspirações para o seu dia a dia.</p>
+            
+            <img 
+                src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=800" 
+                alt="Moda da Karin - Capa" 
+                class="main-img"
+                onclick="openDetails()"
+            >
+            <p class="click-hint">✨ Clique na imagem acima para explorar a coleção ✨</p>
+        </section>
+
+        <section id="detail-page">
+            <p>
+                A moda é uma forma de autoexpressão e arte. Na seleção **Moda da Karin**, buscamos trazer a harmonia entre o conforto e a elegância, combinando cores modernas, tecidos leveis e cortes atemporais. Veja abaixo algumas das nossas principais inspirações visuais para esta estação:
+            </p>
+
+            <div class="gallery">
+                <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=500" alt="Estilo Urbano">
+                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=500" alt="Look Elegante">
+                <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=500" alt="Acessórios e Tendências">
+            </div>
+
+            <button class="back-btn" onclick="closeDetails()">Voltar ao Início</button>
+        </section>
+    </div>
+
+    <script>
+        function openDetails() {
+            document.getElementById('home-page').style.display = 'none';
+            document.getElementById('detail-page').style.display = 'block';
+        }
+
+        function closeDetails() {
+            document.getElementById('detail-page').style.display = 'none';
+            document.getElementById('home-page').style.display = 'block';
+        }
+    </script>
 
 </body>
 </html>
