@@ -163,3 +163,248 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moda da Karin</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #faf7f5;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        header {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #2c2c2c;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-bottom: 2px solid #d4a373;
+            padding-bottom: 10px;
+        }
+
+        /* Menu de Navegação */
+        nav {
+            margin-bottom: 30px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        nav button {
+            background: none;
+            border: 1px solid #d4a373;
+            color: #d4a373;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        nav button:hover, nav button.active {
+            background-color: #d4a373;
+            color: white;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Estilo das Seções (Páginas) */
+        .page {
+            display: none;
+        }
+
+        .page.active-page {
+            display: block;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #444;
+        }
+
+        .main-img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 12px;
+            cursor: pointer;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .main-img:hover {
+            transform: scale(1.02);
+        }
+
+        .click-hint {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #d4a373;
+            font-weight: bold;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Formulário da página de Contato */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .submit-btn {
+            padding: 10px;
+            background-color: #d4a373;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .submit-btn:hover {
+            background-color: #bc8a5f;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Moda da Karin</h1>
+    </header>
+
+    <nav>
+        <button id="btn-home" class="active" onclick="navigateTo('home-page', 'btn-home')">Início</button>
+        <button id="btn-tendencias" onclick="navigateTo('tendencias-page', 'btn-tendencias')">Tendências</button>
+        <button id="btn-sobre" onclick="navigateTo('sobre-page', 'btn-sobre')">Sobre a Karin</button>
+        <button id="btn-contato" onclick="navigateTo('contato-page', 'btn-contato')">Contato</button>
+    </nav>
+
+    <div class="container">
+        
+        <section id="home-page" class="page active-page">
+            <p>Bem-vindo ao universo da moda! Descubra tendências, estilos e inspirações para o seu dia a dia.</p>
+            <img 
+                src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=800" 
+                alt="Moda da Karin - Capa" 
+                class="main-img"
+                onclick="navigateTo('detail-page')"
+            >
+            <p class="click-hint">✨ Clique na imagem acima para explorar a coleção ✨</p>
+        </section>
+
+        <section id="detail-page" class="page">
+            <p>A moda é uma forma de autoexpressão e arte. Na seleção **Moda da Karin**, buscamos trazer a harmonia entre o conforto e a elegância.</p>
+            <div class="gallery">
+                <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=500" alt="Estilo Urbano">
+                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=500" alt="Look Elegante">
+                <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=500" alt="Acessórios e Tendências">
+            </div>
+        </section>
+
+        <section id="tendencias-page" class="page">
+            <p>Confira o que está em alta no mundo da moda nesta estação:</p>
+            <div class="gallery">
+                <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=500" alt="Cores Neutras">
+                <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=500" alt="Estilo Minimalista">
+            </div>
+            <p style="margin-top: 20px;">Aposte em tons terrosos, alfaiataria relaxada e acessórios artesanais para compor o seu visual.</p>
+        </section>
+
+        <section id="sobre-page" class="page">
+            <p>Olá! Eu sou a Karin. Minha paixão pela moda começou desde cedo, vendo como as roupas têm o poder de transformar a autoestima das pessoas.</p>
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600" alt="Karin" style="max-width: 300px; border-radius: 50%; margin-bottom: 15px;">
+            <p>Este espaço foi criado para compartilhar curadorias exclusivas, dicas de estilo e as melhores combinações para todas as ocasiões.</p>
+        </section>
+
+        <section id="contato-page" class="page">
+            <p>Entre em contato para parcerias, consultoria de imagem ou dúvidas!</p>
+            <form onsubmit="event.preventDefault(); alert('Mensagem enviada com sucesso!');">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" placeholder="Seu nome" required>
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" placeholder="Seu e-mail" required>
+
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" rows="4" placeholder="Escreva sua mensagem..." required></textarea>
+
+                <button type="submit" class="submit-btn">Enviar Mensagem</button>
+            </form>
+        </section>
+
+    </div>
+
+    <script>
+        function navigateTo(pageId, btnId = null) {
+            // Esconde todas as páginas
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active-page'));
+
+            // Remove classe ativa de todos os botões do menu
+            const buttons = document.querySelectorAll('nav button');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            // Mostra a página selecionada
+            document.getElementById(pageId).classList.add('active-page');
+
+            // Ativa o botão correspondente no menu
+            if (btnId) {
+                document.getElementById(btnId).classList.add('active');
+            }
+        }
+    </script>
+
+</body>
+</html>
